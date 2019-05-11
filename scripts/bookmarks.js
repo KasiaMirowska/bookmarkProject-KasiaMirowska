@@ -21,16 +21,12 @@ const bookmarklist = (function () {
         return `
         <li class='bookmark-element' data-id="${bookmark.id}">
             <p>TITLE : ${bookmark.title}</p>
-            <label for="rating">RATING</label> 
             <div>
                 <label for="rating" data-id="${bookmark.rating}">RATING: </label>
                 ${rating}
             </div>
         
             <div class="bookmarks-controls">
-                <button class="bookmark-edit">
-                    <span class="button-label">EDIT</span>
-                </button>
                 <button class="bookmark-details">
                     <span class="button-label">DETAILS</span>
                 </button>
@@ -50,14 +46,10 @@ const bookmarklist = (function () {
                 <label for="rating" data-id="${bookmark.rating}">RATING: </label>
                 ${rating}
             </div>
-            <label for='a href'>LINK: </label>
+            <label for='a href'>LINK: <br></label>
             <a href='${bookmark.url}'target="_blank">${bookmark.url}</a>
             <p>DESCRIPTION: ${bookmark.desc}</p>
-            
             <div class="bookmarks-controls">
-                <button class="bookmark-edit">
-                    <span class="button-label">EDIT</span>
-                </button>
                 <button class="bookmark-details">
                     <span class="button-label">DETAILS</span>
                 </button>

@@ -1,7 +1,107 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Julius Sans One', sans-serif;
+  }
 
+body {
+
+}
+main {
+    z-index: 1;
+}
+/* img {
+    position: absolute;
+    z-index: -1000;
+    height: 100%;
+    width: 100vw;
+    filter: grayscale(100%);
+} */
+header {
+    background-color: rgb(38, 57, 68);
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: lightgrey;
+    font-stretch: extra-expanded;    
+}
+
+.container {
+    text-align: center;
+    border: 2px solid white;
+    margin: auto;
+    /* width: 500px; */
+    /* height: 800px; */
+}
+.container-right {
+  margin: auto;
+}
+
+#new-bookmark {
+    margin: 10px;
+    padding:10px;
+}
+
+.bookmark-element {
+    border:solid 1px darkgrey;
+    padding: 0 20px 20px 20px;
+    display: inline-block;
+    width: 45%;
+    font-size: 15px;
+}
+
+form {
+    /* display: inline-block; */
+    text-align: left;
+}
+#title-entry{
+    width:50%;
+    padding: 5px;
+    margin: 20px;
+}
+#desc-entry {
+    width: 80%;
+    height: 100px;
+    padding: 5px;
+    margin: 20px;
+}
+#radio-buttons {
+    margin: 20px;
+    padding:5px;
+}
+#URL-entry {
+    width: 80%;
+    padding: 5px;
+    margin: 20 px;
+}
+
+button {
+    margin: 20px;
+    padding:5px
+}
+
+
+
+ul {
+    list-style-type: none;
+}
+#list-display {
+    
+    text-align: center;
+}
 .checked {
     color: orange;
   }
 
+@media (max-width: 750px) {
+    .bookmark-element {
+        width: 70%;
+    }    
+}
 
-  
+@media (max-width: 650px) {
+    .bookmark-element {
+        width: 90%;
+    }    
+}

@@ -1,0 +1,31 @@
+.row {
+    max-width: 1100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-2 {
+    float: left;
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+    width: 100%;
+}
+  
+@media only screen and (min-width: 640px) {
+    /* 3 columns, 3/12 in % */
+    .col-2 {
+      width: 50%;
+    }
+}
+  
