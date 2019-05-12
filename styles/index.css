@@ -3,19 +3,10 @@
     font-family: 'Julius Sans One', sans-serif;
   }
 
-body {
-
-}
 main {
     z-index: 1;
 }
-/* img {
-    position: absolute;
-    z-index: -1000;
-    height: 100%;
-    width: 100vw;
-    filter: grayscale(100%);
-} */
+
 header {
     background-color: rgb(38, 57, 68);
     margin: auto;
@@ -31,11 +22,6 @@ header {
     text-align: center;
     border: 2px solid white;
     margin: auto;
-    /* width: 500px; */
-    /* height: 800px; */
-}
-.container-right {
-    
 }
 .star-choice-container {
     display: inline-block;
@@ -57,7 +43,6 @@ header {
 }
 
 form {
-    /* display: inline-block; */
     text-align: left;
 }
 #title-entry{
@@ -85,8 +70,6 @@ button {
     margin: 20px;
     padding:5px
 }
-
-
 
 ul {
     list-style-type: none;
