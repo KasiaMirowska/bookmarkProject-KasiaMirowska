@@ -86,12 +86,15 @@ const bookmarklist = (function () {
             console.log(event);
             event.preventDefault();
             const newTagTitle = $('#title-entry').val();
+            console.log(newTagTitle)
             const newURL = $('#URL-entry').val()
+            console.log(newURL)
             const desc = $('#desc-entry').val();
             const rating = $('input[name=stars]:checked').val();
             Store.ratingSort = null;
             clearingForm(event);
             saveNewBookmark(newTagTitle,newURL,rating,desc);
+            render();
         })
 
     }
