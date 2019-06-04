@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <header>
+    <header role='banner'>
         <h1>MY BOOKMARKS</h1>
     </header>
-    <main>
+    <main role='main'>
         <div class='row'>
             <div class="container col-2">
                 <div class='new-bookmark'>
@@ -52,11 +52,11 @@
                         <label for="desc-entry">DESCRIPTION</label>
                         <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
 
-                        <button type="submit">ADD TO LIST</button>
-                        <button id='cancel' type='button'>CANCEL</button>
-                </fieldset>
+                        <button role='button' type="submit">ADD TO LIST</button>
+                        <button role='button' id='cancel' type='button'>CANCEL</button>
+                    </fieldset>
                 </form>
-                
+
                 <div class="js-error-message" hidden></div>
             </div>
             <div class='container-right col-2'>
@@ -71,7 +71,7 @@
                     </select>
                 </div>
             </div>
-        </div> 
+        </div>
         <div id='list-display'>
             <ul class='bookmarks-list'></ul>
         </div>

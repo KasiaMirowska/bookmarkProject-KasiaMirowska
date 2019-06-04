@@ -27,10 +27,10 @@ const bookmarklist = (function () {
             </div>
         
             <div class="bookmarks-controls">
-                <button class="bookmark-details">
+                <button role='button' class="bookmark-details">
                     <span class="button-label">DETAILS</span>
                 </button>
-                <button class="bookmark-delete">
+                <button role='button' class="bookmark-delete">
                     <span class="button-label">DELETE</span>
                 </button>
             </div>
@@ -50,13 +50,13 @@ const bookmarklist = (function () {
             <a href='${bookmark.url}'target="_blank">${bookmark.url}</a>
             <p>DESCRIPTION: ${bookmark.desc}</p>
             <div class="bookmarks-controls">
-                <button class="bookmark-details">
+                <button role='button' class="bookmark-details">
                     <span class="button-label">DETAILS</span>
                 </button>
-                <button class="bookmark-delete">
+                <button role='button' class="bookmark-delete">
                     <span class="button-label">DELETE</span>
                 </button>
-                <button class="bookmark-collapse">
+                <button role='button' class="bookmark-collapse">
                 <span class="button-label">COLLAPSE</span>
             </button>
             </div>
