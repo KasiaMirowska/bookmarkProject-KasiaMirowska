@@ -18,22 +18,21 @@
     </header>
     <main>
         <div class='row'>
-            <section class="container col-2">
+            <div class="container col-2">
                 <div class='new-bookmark'>
                     <button id='new-bookmark' type='button'>NEW <br>BOOKMARK</button>
                 </div>
                 <form id="bookmarks-form" hidden>
                     <fieldset>
                         <legend>Create New Bookmark</legend>
-                        <label for="title">TITLE</label>
+                        <label for="title-entry">TITLE</label>
                         <input id="title-entry" type="text" name="title-entry" class="title-entry" required>
 
-                        <div class="rate"></div>
-                        <label for="rating">RATING</label>
+                        <label for="radio-buttons">RATING</label>
                         <fieldset id='radio-buttons'>
                             <legend>Select Rating</legend>
                             <input id='stars5' type='radio' name=stars value=5>
-                            <label for="stars">5 Stars</label>
+                            <label for="stars5">5 Stars</label>
 
                             <input id='stars4' type="radio" name=stars value=4>
                             <label for="stars4">4 Stars</label>
@@ -48,10 +47,10 @@
                             <label for="stars1">1 Star</label>
                         </fieldset>
 
-                        <label for="URL">URL</label>
+                        <label for="URL-entry">URL</label>
                         <input id='URL-entry' type="url" name="url-entry" class="url-entry" required>
 
-                        <label for="description">DESCRIPTION</label>
+                        <label for="desc-entry">DESCRIPTION</label>
                         <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
 
                         <button type="submit">ADD TO LIST</button>
@@ -60,8 +59,8 @@
                 </form>
                 
                 <div class="js-error-message" hidden></div>
-            </section>
-            <section class='container-right col-2'>
+            </div>
+            <div class='container-right col-2'>
                 <div class='star-choice-container'>
                     <select id='star-choices'>
                         <option value="0">SORT BY RATING</option>
@@ -72,19 +71,19 @@
                         <option value="1">All Bookmarks</option>
                     </select>
                 </div>
-            </section>
+            </div>
         </div> 
         <div id='list-display'>
             <ul class='bookmarks-list'></ul>
         </div>
     </main>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
-    <script type="text/javascript" src="scripts/store.js"></script>
-    <script type="text/javascript" src="scripts/bookmarks.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/store.js"></script>
+    <script src="scripts/bookmarks.js"></script>
+    <script src="scripts/index.js"></script>
 
 </body>
 
