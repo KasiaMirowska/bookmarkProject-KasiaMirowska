@@ -50,12 +50,12 @@ const bookmarklist = (function () {
             <a href='${bookmark.url}'target="_blank">${bookmark.url}</a>
             <p>DESCRIPTION: ${bookmark.desc}</p>
             <div class="bookmarks-controls">
-                <button class="bookmark-details">
-                    <span class="button-label">DETAILS</span>
-                </button>
                 <button class="bookmark-delete">
                     <span class="button-label">DELETE</span>
                 </button>
+                <button class="bookmark-collapse">
+                <span class="button-label">COLLAPSE</span>
+            </button>
             </div>
         </li>`
     }
@@ -78,21 +78,35 @@ const bookmarklist = (function () {
     }
 
 
-    function handleFormEntry() {
+    function handleFormEntries() {
         $('#bookmarks-form').submit(function (event) {
+            console.log(event);
             event.preventDefault();
             const newTagTitle = $('#title-entry').val();
             const newURL = $('#URL-entry').val()
             const desc = $('#desc-entry').val();
             const rating = $('input[name=stars]:checked').val();
+            Store.ratingSort = null;
+            clearingForm(event);
+            saveNewBookmark(newTagTitle,newURL,rating,desc);
+        })
+
+    }
+    function clearingForm(event){
+        if (event) {
+            console.log('here', event)
             $('#title-entry').val('');
             $('#URL-entry').val('');
             $('#desc-entry').val('');
             $('#bookmarks-form').attr('hidden', true);
             $('input[name=stars]').prop('checked', false);
             $('#star-choices').prop('selectedIndex',0);
-            Store.ratingSort = null;
-            api.createItem(newTagTitle, newURL, rating, desc)
+        }
+            
+    }
+
+    function saveNewBookmark(title, url, rating, desc){
+        api.createItem(title, url, rating, desc)
                 .then((newTag) => {
                     Store.addNewBookmark(newTag);
                     Store.errorMessage = null;
@@ -102,9 +116,9 @@ const bookmarklist = (function () {
                     Store.errorMessage = error.message;
                     render();
                   });
-        })
-
     }
+
+    
     function handleFormCancel(){
         $('#bookmarks-form').on('click', '#cancel', (() => {
             $('#title-entry').val('');
@@ -128,6 +142,14 @@ const bookmarklist = (function () {
             render();
         });
     }
+    function handleTagCollapse(){
+        $('.bookmarks-list').on('click', '.bookmark-collapse', event => {
+            const currentTagId = getBookmarkIdFromElement(event.currentTarget);
+            Store.setBookmarkCollapsed(currentTagId);
+            render();
+        });
+    }
+    
     function handleDeleteClick() {
         $('.bookmarks-list').on('click', '.bookmark-delete', event => {
             const deletedTagId = getBookmarkIdFromElement(event.currentTarget);
@@ -174,9 +196,10 @@ const bookmarklist = (function () {
 
 
     function bundleFn() {
-        handleFormEntry();
+        handleFormEntries();
         handleFormCancel()
         handleDetailsClick();
+        handleTagCollapse();
         handleEnterFormClick();
         handleDeleteClick();
         handleRatingDropDownMenu()
