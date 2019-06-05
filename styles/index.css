@@ -1,14 +1,16 @@
 * {
     box-sizing: border-box;
     font-family: 'Julius Sans One', sans-serif;
+    background-color: rgb(248, 244, 239);
   }
 
 main {
     z-index: 1;
+    background-color: rgb(248, 244, 239);
 }
 
 header {
-    background-color: rgb(38, 57, 68);
+    background-color: rgb(19, 27, 44);
     margin: auto;
     margin-bottom: 20px;
     text-align: center;
@@ -16,6 +18,30 @@ header {
     padding-top: 5px;
     color: lightgrey;
     font-stretch: extra-expanded;    
+}
+form {
+    text-align: left;
+}
+
+button {
+    background-color: rgb(200, 245, 230);
+    border: 0;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:  5px 3px 1px 0px rgba(76, 76, 88, 0.2);
+}
+
+button:hover {
+    background-color: rgb(170, 180, 156);
+  }
+
+button:focus {
+    outline: 0;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .container {
@@ -29,11 +55,27 @@ header {
     margin-left: 50%;
     text-align: center;
 }
-#new-bookmark {
+
+#new-bookmark, #ratingSort {
+    background-color: rgb(200, 245, 230);
+    width: 200px;
+    height: 80px;
     margin: 10px;
     padding:10px;
+    border-radius: 10px;
+    box-shadow:  8px 5px 2px 0px rgba(76, 76, 88, 0.2);
+   
+}
+#new-bookmark:hover, #ratingSort:hover {
+    background-color: rgb(170, 180, 156);
 }
 
+#dropdownList {
+    border: solid 1px black;
+    width: 120px;
+    padding: 10px;
+    
+}
 .bookmark-element {
     border:solid 1px darkgrey;
     padding: 0 20px 20px 20px;
@@ -42,9 +84,7 @@ header {
     font-size: 15px;
 }
 
-form {
-    text-align: left;
-}
+
 #title-entry{
     width:50%;
     padding: 5px;
@@ -66,14 +106,6 @@ form {
     margin: 20 px;
 }
 
-button {
-    margin: 20px;
-    padding:5px
-}
-
-ul {
-    list-style-type: none;
-}
 #list-display {
     
     text-align: center;

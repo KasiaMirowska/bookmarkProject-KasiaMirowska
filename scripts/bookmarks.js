@@ -4,6 +4,10 @@
 
 const bookmarklist = (function () {
 
+    function staticRatingDisplay(ratingNum){
+       
+
+    }
     function ratingDisplay(ratingNum) {
         let htmlRating = [];
         for (let i = 1; i < 6; i++) {
@@ -15,6 +19,22 @@ const bookmarklist = (function () {
         };
         return htmlRating.join('');
     }
+     function generateFilterRating(){
+        let stars5 = ratingDisplay(5);
+        let stars4 = ratingDisplay(4);
+        let stars3 = ratingDisplay(3);
+        let stars2 = ratingDisplay(2);
+        let stars1 = ratingDisplay(1);
+        return `
+        <ul id='dropdownList'>
+            <li value='5'>${stars5}</li>
+            <li>${stars4}</li>
+            <li>${stars3}</li>
+            <li>${stars2}</li>
+            <li>${stars1}</li>
+        </ul>`
+     }
+   
 
     function generateBookmark(bookmark) {
         const rating = ratingDisplay(bookmark.rating);
@@ -79,6 +99,15 @@ const bookmarklist = (function () {
             $('#bookmarks-form').removeAttr('hidden');
         }))
     }
+
+    function handleRatingFilter(){
+        $('#ratingSort').on('click', (e) => {
+            e.preventDefault();
+            const htmlSort = generateFilterRating()
+            $($('#sorting').html(htmlSort)).toggle(htmlSort); 
+        });
+    }
+    
 
 
     function handleFormEntries() {
@@ -173,8 +202,9 @@ const bookmarklist = (function () {
     }
 
     function handleRatingDropDownMenu() {
-        $('#star-choices').change((event) => {
-            const choice = $("#star-choices option:selected").attr('value');
+        $('#dropdownList').on('click',(event) => {
+            console.log(e.target)
+            const choice = $(e.target).val();
             console.log(choice)
             Store.ratingSort = Number(choice);
             render();
@@ -208,6 +238,7 @@ const bookmarklist = (function () {
         handleTagCollapse();
         handleEnterFormClick();
         handleDeleteClick();
+        handleRatingFilter()
         handleRatingDropDownMenu()
     }
 
