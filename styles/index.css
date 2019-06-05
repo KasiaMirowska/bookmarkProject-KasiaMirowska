@@ -1,20 +1,28 @@
 * {
     box-sizing: border-box;
-    font-family: 'Julius Sans One', sans-serif;
+    
     
   }
 header {
-    background-color: rgb(36, 36, 28);
+    background-color: rgb(44, 44, 36);
     text-align: center;
     padding: 15px;
-    color:lightblue;
+    color:orange;
     font-size: 18px;
+    font-family: 'Righteous', cursive;
 }
  main {
-    background-color: azure;
+    /* background-color: rgb(222, 236, 235); */
+    font-family: 'Righteous', cursive; 
+    height: 100vh;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQXQb7BMvxTOFReseP8hnQPcxmf2M_maD7JTjfExx8IIhtuMxGug");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
  }
 
- .container-1 {
+.container-1 {
     flex: 1;
     text-align: center;
   }
@@ -30,13 +38,13 @@ form {
 }
 
 .bookmarks-list {
-    margin: auto;  
+    margin: 20px;  
     padding: 0;
 }
 
 .bookmark-element {
-    background-color: rgb(250, 249, 244);
-    /* border:solid 1px darkgrey; */
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: rgb(255, 255, 255);
     padding: 0 20px 20px 20px;
     margin-top: 10px;
     font-size: 15px;
@@ -55,7 +63,7 @@ button {
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow:  5px 3px 1px 0px rgba(65, 65, 80, 0.2);
+    box-shadow:  5px 3px 5px 0px rgba(44, 44, 36, 0.644);
 }
 
 button:hover {
@@ -67,13 +75,13 @@ button:focus {
 }
 
 #new-bookmark, #ratingSort {
-    background-color: rgb(200, 245, 230);
+    background-color: rgb(171, 231, 211);
     width: 200px;
     height: 80px;
     margin: 10px;
     padding:10px;
     border-radius: 10px;
-    box-shadow:  8px 5px 2px 0px rgba(65, 65, 80, 0.2);;
+    box-shadow:  8px 3px 5px 0px rgba(44, 44, 36, 0.644);
    
 }
 #new-bookmark:hover, #ratingSort:hover {
@@ -128,7 +136,14 @@ ul {
     }
     .row {
         display: flex;
-        background-color: azure;
+        /* background-color:rgb(222, 236, 235); */
+    }
+    .container-1 {
+        text-align: right;
+    }
+
+    .container-2{
+        text-align: left 
     }
     #list-display {
         display: flex;
