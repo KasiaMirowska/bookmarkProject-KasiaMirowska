@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/float-grid.css">
     <link rel="stylesheet" href="styles/index.css">
 
 </head>
@@ -18,63 +17,61 @@
     </header>
     <main role='main'>
         <div class='row'>
-            <div class="container col-2">
+            <div class="container-1">
                 <div class='new-bookmark'>
                     <button id='new-bookmark' type='button'>NEW <br>BOOKMARK</button>
                 </div>
-                <form id="bookmarks-form" hidden>
-                    <fieldset>
-                        <legend>Create New Bookmark</legend>
-                        <label for="title-entry">TITLE</label>
-                        <input id="title-entry" type="text" name="title-entry" class="title-entry" required>
-
-                        <fieldset id='radio-buttons'>
-                            <legend>Select Rating</legend>
-                            <input id='stars5' type='radio' name=stars value=5>
-                            <label for="stars5">5 Stars</label>
-
-                            <input id='stars4' type="radio" name=stars value=4>
-                            <label for="stars4">4 Stars</label>
-
-                            <input id='stars3' type="radio" name=stars value=3>
-                            <label for="stars3">3 Stars</label>
-
-                            <input id='stars2' type="radio" name=stars value=2>
-                            <label for="stars2">2 Stars</label>
-
-                            <input id='stars1' type="radio" name=stars value=1>
-                            <label for="stars1">1 Star</label>
-                        </fieldset>
-
-                        <label for="URL-entry">URL</label>
-                        <input id='URL-entry' type="url" name="url-entry" class="url-entry" required>
-
-                        <label for="desc-entry">DESCRIPTION</label>
-                        <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
-
-                        <button role='button' type="submit">ADD TO LIST</button>
-                        <button role='button' id='cancel' type='button'>CANCEL</button>
-                    </fieldset>
-                </form>
-
                 <div class="js-error-message" hidden></div>
             </div>
-            <div class='container-right col-2'>
+            <div class='container-2'>
                 <div class='rating-container'>
                     <button id='ratingSort'>SORT BY <br> RATING</button>
                     <div id='sorting'>
-                            <ul id='dropdownList'></ul>
-                                    
-                                
+                        <ul id='dropdownList'></ul>
                     </div>
-                    
-                   
                 </div>
             </div>
         </div>
-        <div id='list-display'>
-            <ul class='bookmarks-list'></ul>
+        <div class='form-container'>
+            <form id="bookmarks-form" hidden>
+                <fieldset>
+                    <legend>Create New Bookmark</legend>
+                    <label for="title-entry">TITLE</label>
+                    <input id="title-entry" type="text" name="title-entry" class="title-entry" required>
+
+                    <fieldset id='radio-buttons'>
+                        <legend>Select Rating</legend>
+                        <input id='stars5' type='radio' name=stars value=5>
+                        <label for="stars5">5 Stars</label>
+
+                        <input id='stars4' type="radio" name=stars value=4>
+                        <label for="stars4">4 Stars</label>
+
+                        <input id='stars3' type="radio" name=stars value=3>
+                        <label for="stars3">3 Stars</label>
+
+                        <input id='stars2' type="radio" name=stars value=2>
+                        <label for="stars2">2 Stars</label>
+
+                        <input id='stars1' type="radio" name=stars value=1>
+                        <label for="stars1">1 Star</label>
+                    </fieldset>
+
+                    <label for="URL-entry">URL</label>
+                    <input id='URL-entry' type="url" name="url-entry" class="url-entry" required>
+
+                    <label for="desc-entry">DESCRIPTION</label>
+                    <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
+
+                    <button role='button' type="submit">ADD TO LIST</button>
+                    <button role='button' id='cancel' type='button'>CANCEL</button>
+                </fieldset>
+            </form>
         </div>
+            <div id='list-display'>
+                <ul class='bookmarks-list'></ul>
+            </div>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>

@@ -203,7 +203,6 @@ const bookmarklist = (function () {
 
     function handleRatingDropDownMenu() {
         $('#dropdownList').on('click',(event) => {
-            console.log(e.target)
             const choice = $(e.target).val();
             console.log(choice)
             Store.ratingSort = Number(choice);
