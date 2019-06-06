@@ -28,7 +28,13 @@
                 <div class='rating-container'>
                     <button id='ratingSort'>SORT BY <br> RATING</button>
                     <div id='sorting'>
-                        <ul id='dropdownList'></ul>
+                            <ul id='dropdownList'hidden>
+                                <li><input type="checkbox" id="star5" name="stars" value="5"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></li>
+                                <li><input type="checkbox" id="star4" name="stars" value="4"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></</li>
+                                <li><input type="checkbox" id="star3" name="stars" value="3"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></</li>
+                                <li><input type="checkbox" id="star2" name="stars" value="2"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></</li>
+                                <li><input type="checkbox" id="star1" name="stars" value="1"><span class="fa fa-star checked"></</li>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -60,19 +66,21 @@
 
                     <label for="URL-entry">URL</label>
                     <input id='URL-entry' type="url" name="url-entry" class="url-entry" required>
+                    <br>
 
-                    <label for="desc-entry">DESCRIPTION</label>
-                    <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
-
-                    <button role='button' type="submit">ADD TO LIST</button>
-                    <button role='button' id='cancel' type='button'>CANCEL</button>
+                    <div class='frame'>
+                        <label for="desc-entry">Description</label>
+                        <input id='desc-entry' type="text" name="desc-entry" class="desc-entry">
+                    </div>
+                    <div class='bookmark-controls'>
+                    <button id='submit' role='button' type="submit">ADD TO LIST</button>
+                    <button id='cancel' role='button' id='cancel' type='button'>CANCEL</button>
                 </fieldset>
             </form>
         </div>
             <div id='list-display'>
                 <ul class='bookmarks-list'></ul>
             </div>
-
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>

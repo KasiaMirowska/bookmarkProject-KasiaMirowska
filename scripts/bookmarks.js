@@ -4,10 +4,6 @@
 
 const bookmarklist = (function () {
 
-    function staticRatingDisplay(ratingNum){
-       
-
-    }
     function ratingDisplay(ratingNum) {
         let htmlRating = [];
         for (let i = 1; i < 6; i++) {
@@ -19,66 +15,62 @@ const bookmarklist = (function () {
         };
         return htmlRating.join('');
     }
-     function generateFilterRating(){
-        let stars5 = ratingDisplay(5);
-        let stars4 = ratingDisplay(4);
-        let stars3 = ratingDisplay(3);
-        let stars2 = ratingDisplay(2);
-        let stars1 = ratingDisplay(1);
-        return `
-        <ul id='dropdownList'>
-            <li value='5'>${stars5}</li>
-            <li>${stars4}</li>
-            <li>${stars3}</li>
-            <li>${stars2}</li>
-            <li>${stars1}</li>
-        </ul>`
-     }
+     
+
    
 
     function generateBookmark(bookmark) {
         const rating = ratingDisplay(bookmark.rating);
+        console.log(bookmark);
         return `
         <li class='bookmark-element' data-id="${bookmark.id}">
-            <p>TITLE : ${bookmark.title}</p>
-            <div>
-                <label for="rating" data-id="${bookmark.rating}">RATING: </label>
-                ${rating}
-            </div>
-        
-            <div class="bookmarks-controls">
-                <button role='button' class="bookmark-details">
-                    <span class="button-label">DETAILS</span>
-                </button>
-                <button role='button' class="bookmark-delete">
-                    <span class="button-label">DELETE</span>
-                </button>
+            <div class='frame'>
+                <p>TITLE : ${bookmark.title}</p>
+                <div>
+                    <label for="rating" data-id="${bookmark.rating}">RATING: </label>
+                    ${rating}
+                </div>
+            
+                <div class="bookmarks-controls">
+                    <button role='button' class="bookmark-details">
+                        <span class="button-label">DETAILS</span>
+                    </button>
+                    <button role='button' class="bookmark-delete">
+                        <span class="button-label">DELETE</span>
+                    </button>
+                </div>
             </div>
         </li>`
+       
     }
 
     function gnenerateExpandedBookmark(bookmark) {
         const rating = ratingDisplay(bookmark.rating);
         return ` 
         <li class='bookmark-element' data-id="${bookmark.id}">
-            <p>TITLE: ${bookmark.title}</p>
-            <div>
-                <label for="rating" data-id="${bookmark.rating}">RATING: </label>
-                ${rating}
-            </div>
-            <label for='a href'>LINK: <br></label>
-            <a href='${bookmark.url}'target="_blank">${bookmark.url}</a>
-            <p>DESCRIPTION: ${bookmark.desc}</p>
-            <div class="bookmarks-controls">
-                <button role='button' class="bookmark-details">
-                    <span class="button-label">DETAILS</span>
-                </button>
-                <button role='button' class="bookmark-delete">
-                    <span class="button-label">DELETE</span>
-                </button>
-                <button role='button' class="bookmark-collapse">
-                <span class="button-label">COLLAPSE</span>
-            </button>
+            <div class='frame'>
+                <p>TITLE: ${bookmark.title}</p>
+                <div>
+                    <label for="rating" data-id="${bookmark.rating}">RATING: </label>
+                    ${rating}
+                </div>
+                <label for='a href'>LINK: <br></label>
+                <a href='${bookmark.url}'target="_blank">${bookmark.url}</a>
+                <p>DESCRIPTION: </p>
+                <div class='frame'>
+                    <p>${bookmark.desc}</p>
+                </div
+                <div class="bookmarks-controls">
+                    <button role='button' class="bookmark-details">
+                        <span class="button-label">DETAILS</span>
+                    </button>
+                    <button role='button' class="bookmark-delete">
+                        <span class="button-label">DELETE</span>
+                    </button>
+                    <button role='button' class="bookmark-collapse">
+                    <span class="button-label">COLLAPSE</span>
+                    </button>
+                </div>
             </div>
         </li>`
     }
@@ -101,15 +93,14 @@ const bookmarklist = (function () {
     }
 
     function handleRatingFilter(){
-        $('#ratingSort').on('click', (e) => {
-            e.preventDefault();
-            const htmlSort = generateFilterRating()
-            $($('#sorting').html(htmlSort)).toggle(htmlSort); 
+        console.log($('#dropdownList'),'hi')
+        $('#ratingSort').on('click', () => {
+            $('#dropdownList').toggle(1000)
+            
         });
     }
     
-
-
+    
     function handleFormEntries() {
         $('#bookmarks-form').submit(function (event) {
             console.log(event);
@@ -177,6 +168,7 @@ const bookmarklist = (function () {
             render();
         });
     }
+    
     function handleTagCollapse(){
         $('.bookmarks-list').on('click', '.bookmark-collapse', event => {
             const currentTagId = getBookmarkIdFromElement(event.currentTarget);
@@ -201,9 +193,12 @@ const bookmarklist = (function () {
         })
     }
 
+
+
     function handleRatingDropDownMenu() {
-        $('#dropdownList').on('click',(event) => {
-            const choice = $(e.target).val();
+        $('#dropdownList li').on('click',(e) => {
+            $('input:checkbox').not(e.target).prop('checked', false)
+             const choice = $(e.target).val();
             console.log(choice)
             Store.ratingSort = Number(choice);
             render();

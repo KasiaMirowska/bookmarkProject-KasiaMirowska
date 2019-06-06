@@ -11,15 +11,21 @@ header {
     font-size: 18px;
     font-family: 'Righteous', cursive;
 }
+
  main {
-    /* background-color: rgb(222, 236, 235); */
-    font-family: 'Righteous', cursive; 
-    height: 100vh;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQXQb7BMvxTOFReseP8hnQPcxmf2M_maD7JTjfExx8IIhtuMxGug");
+    /* background-color: rgb(222, 236, 235);  */
+    background: url("https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg");
+    /* url('https://images.pexels.com/photos/1853836/pexels-photo-1853836.jpeg'); */
+    
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    font-family: 'Righteous', cursive; 
+    min-height: 100%;
+    
+    
  }
 
 .container-1 {
@@ -30,12 +36,8 @@ header {
 .container-2 {
     flex: 1;
     text-align: center;
-  } 
+  }
 
-form {
-    flex-basis: 40%;
-    margin: auto;
-}
 
 .bookmarks-list {
     margin: 20px;  
@@ -43,23 +45,28 @@ form {
 }
 
 .bookmark-element {
-    font-family: 'Julius Sans One', sans-serif;
-    background-color: rgb(255, 255, 255);
-    padding: 0 20px 20px 20px;
+    /* font-family: 'Julius Sans One', sans-serif;  */
+    background-color: rgba(255, 255, 255, 0.801);
+    /* padding: 20px; */
     margin-top: 10px;
     font-size: 15px;
     box-shadow:  8px 5px 2px 0px rgba(65, 65, 80, 0.2);;
+    word-wrap: break-word;
+   
 } 
-
+.frame {
+    margin: 8px;
+    padding: 10px;
+    border: 2px solid silver;
+}
 .bookmark-controls {
-    display: inline-block;
     text-align: center;
 }
 
 button {
     background-color: rgb(226, 226, 248);
     border: 0;
-    width: 95px;
+    width: 100px;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -88,7 +95,20 @@ button:focus {
     background-color: rgb(170, 180, 156);
 }
 
+#submit, #cancel {
+    width: 200px;
+}
 
+form {
+    background-color:  rgba(255, 255, 255, 0.801);
+    flex-basis: 40%;
+    margin: auto;
+    padding: 10px;
+}
+
+fieldset {
+    border: 2px solid silver;
+}
 #title-entry{
     width:50%;
     padding: 5px;
@@ -96,20 +116,19 @@ button:focus {
 }
 
 #desc-entry {
-    width: 80%;
-    height: 100px;
-    padding: 5px;
+    width: 90%;
+    padding: 8px;
     margin: 20px;
-    }
+    } 
 
 #radio-buttons {
     margin: 20px;
-    padding:5px;
+    padding:8px;
     }
 
-    #URL-entry {
+#URL-entry {
     width: 80%;
-    padding: 5px;
+    padding: 8px;
     margin: 20 px;
     }
 
@@ -117,15 +136,42 @@ ul {
     list-style-type: none;
     } 
 
+/* ratio-filter set up */
+
+/* .rating-container {
+    border: 1px white;
+    position: relative;
+    width: 140px;
+    margin: 0 auto;
+    padding: 10px;  
+} */
+
+
+
+
 #dropdownList {
-    border: solid 1px black;
-    padding: 10px;
     list-style-type: none;
+    position: absolute;
+    width: 130px;
+    margin: auto;
+    margin-left: 55px;
+    padding: 10px;
+    background-color: rgb(171, 231, 211);
+    border-radius: 7px;
     }
+
+#dropdownList, li {
+    padding: 5px;
+    padding-left: 8px;
+} 
+
+
+
+
 
 
 .checked {
-    color: orange;
+    color: rgb(255, 145, 0);
   }
 
 
@@ -158,5 +204,8 @@ ul {
     }
     .form-container {
         display: flex;
+    }
+    main {
+        min-height: 100vh;
     }
   }
