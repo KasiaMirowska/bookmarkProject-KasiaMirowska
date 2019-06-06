@@ -136,25 +136,13 @@ ul {
     list-style-type: none;
     } 
 
-/* ratio-filter set up */
-
-/* .rating-container {
-    border: 1px white;
-    position: relative;
-    width: 140px;
-    margin: 0 auto;
-    padding: 10px;  
-} */
-
-
-
 
 #dropdownList {
     list-style-type: none;
     position: absolute;
     width: 130px;
     margin: auto;
-    margin-left: 55px;
+    margin-left: 155px;
     padding: 10px;
     background-color: rgb(171, 231, 211);
     border-radius: 7px;
@@ -205,6 +193,17 @@ ul {
     .form-container {
         display: flex;
     }
+
+    #dropdownList {
+        list-style-type: none;
+        position: absolute;
+        width: 130px;
+        margin: auto;
+        margin-left: 55px;
+        padding: 10px;
+        background-color: rgb(171, 231, 211);
+        border-radius: 7px;
+        }
     main {
         min-height: 100vh;
     }
